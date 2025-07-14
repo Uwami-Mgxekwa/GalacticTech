@@ -39,6 +39,7 @@ function handleNavbarScroll() {
 // Smooth scrolling for navigation links
 function setupSmoothScrolling() {
     const links = document.querySelectorAll('.nav-links a');
+    const menuToggle = document.getElementById('menu-toggle'); // Get the menu toggle checkbox
     
     links.forEach(link => {
         link.addEventListener('click', (e) => {
@@ -50,6 +51,10 @@ function setupSmoothScrolling() {
                 targetElement.scrollIntoView({
                     behavior: 'smooth'
                 });
+                // Close the hamburger menu after clicking a link
+                if (menuToggle && menuToggle.checked) {
+                    menuToggle.checked = false;
+                }
             }
         });
     });
