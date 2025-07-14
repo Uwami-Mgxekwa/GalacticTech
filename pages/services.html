@@ -3,10 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Galactic Tech - Services</title>
+    <link rel="stylesheet" href="../css/services.css">
 </head>
 <body>
-    <h1>SEVKICES 
-    </h1>
+    <div class="stars" id="stars"></div>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">GALACTIC TECH</div>
+            <!-- Hamburger icon and checkbox for toggling -->
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="hamburger-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <ul class="nav-links">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="#services">Services</a></li> <!-- Link to this page's services section -->
+                <li><a href="/pages/careers.html">Careers</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero services-hero">
+        <!-- No video here, background will be handled by CSS -->
+        <div class="hero-overlay"></div>
+        
+        <!-- Floating Elements -->
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        
+        <div class="hero-content">
+            <h1 class="hero-title">Our Stellar Services</h1>
+            <p class="hero-subtitle">Innovative solutions for your interstellar IT needs</p>
+            <div class="hero-buttons">
+                <a href="#service-offerings" class="btn btn-primary">Discover More</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="service-offerings" class="service-offerings-section">
+        <div class="container">
+            <h2 class="section-title">Remote Assistance for Dual College Lab</h2>
+            
+            <div class="service-card-grid">
+                <!-- Service Card 1: Project Overview -->
+                <div class="service-card">
+                    <h3>Project Overview</h3>
+                    <p>Establishing a structured remote assistance system for managing IT and computer-related issues, ensuring efficient query resolution, ticket tracking, and escalation.</p>
+                </div>
+
+                <!-- Service Card 2: Communication & Query Collection -->
+                <div class="service-card">
+                    <h3>Communication & Query Collection</h3>
+                    <p>Students, staff, and lab users submit queries via a dedicated WhatsApp Group. An auto-response system acknowledges receipt, and urgent queries can be flagged.</p>
+                    <ul>
+                        <li>WhatsApp Group for query submission</li>
+                        <li>Automated acknowledgment system</li>
+                        <li>Urgent query flagging</li>
+                    </ul>
+                </div>
+
+                <!-- Service Card 3: Ticket Logging System -->
+                <div class="service-card">
+                    <h3>Technicians' Interactive Logging System</h3>
+                    <p>A simple web-based system for technicians to log incoming issues with detailed fields for user's name, issue description, device ID, and priority level.</p>
+                    <ul>
+                        <li>User's Name</li>
+                        <li>Issue Description</li>
+                        <li>Device ID / Lab Number</li>
+                        <li>Priority Level (Urgent, Critical, High, Violation)</li>
+                    </ul>
+                </div>
+
+                <!-- Service Card 4: Issue Tracking & Escalation -->
+                <div class="service-card">
+                    <h3>Issue Tracking & Escalation</h3>
+                    <p>A central platform for real-time monitoring of ticket status. Unresolved issues are reassigned or escalated within 48 hours to ensure timely resolution.</p>
+                    <ul>
+                        <li>Real-time ticket status monitoring</li>
+                        <li>Automated reassignment for unresolved issues</li>
+                        <li>Escalation to higher levels if needed</li>
+                    </ul>
+                </div>
+
+                <!-- Service Card 5: Technician Roles & Responsibilities -->
+                <div class="service-card">
+                    <h3>Technician Roles & Responsibilities</h3>
+                    <p>Dedicated technicians (O and T) handle tickets based on workload. An escalation framework ensures issues are addressed even if a primary technician is unavailable.</p>
+                    <ul>
+                        <li>Workload-based ticket distribution</li>
+                        <li>Three-level escalation framework: Assigned Tech &rarr; Another Tech &rarr; IT Head/External Support</li>
+                    </ul>
+                </div>
+
+                <!-- Service Card 6: Procurement & Maintenance -->
+                <div class="service-card">
+                    <h3>Procurement & Maintenance</h3>
+                    <p>Streamlined processes for handling new hardware requirements (reported to management) and logging/assigning hardware maintenance tasks.</p>
+                    <ul>
+                        <li>Management approval for procurement</li>
+                        <li>Logged and assigned hardware maintenance</li>
+                    </ul>
+                </div>
+
+                <!-- Service Card 7: Task Time Tracking & Reporting -->
+                <div class="service-card">
+                    <h3>Task Time Tracking & Reporting</h3>
+                    <p>The system records ticket open and close times to measure resolution efficiency. Weekly reports provide insights into response times and issue trends.</p>
+                    <ul>
+                        <li>Resolution time tracking</li>
+                        <li>Weekly efficiency reports</li>
+                        <li>Analysis of unresolved issues and trends</li>
+                    </ul>
+                </div>
+
+                <!-- Service Card 8: WhatsApp Auto-Response & Assurance -->
+                <div class="service-card">
+                    <h3>WhatsApp Auto-Response & Assurance</h3>
+                    <p>Automated messages for standard acknowledgment, status updates, and escalation notices, keeping users informed throughout the resolution process.</p>
+                    <ul>
+                        <li>"Issue logged" acknowledgment</li>
+                        <li>"Actively working" status updates</li>
+                        <li>"Issue escalated" notifications</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="../js/services.js"></script>
 </body>
 </html>

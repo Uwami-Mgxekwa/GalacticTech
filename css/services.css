@@ -1,0 +1,174 @@
+/* Import global styles from index.css to maintain consistency */
+@import url('index.css');
+
+/* Override hero background for services page */
+.services-hero {
+    /* Different background for the services page hero */
+    background: radial-gradient(ellipse at top, #0f0f23 0%, #2a0845 100%),
+                radial-gradient(ellipse at bottom, #1e3c72 0%, #2a5298 100%);
+    /* Ensure the background covers the entire section */
+    background-size: cover;
+    background-position: center;
+    /* Remove video if it was present in the HTML for this specific hero */
+    position: relative; /* Ensure overlay and content are positioned correctly */
+}
+
+/* Ensure hero-video is hidden if it exists in the HTML, though it's removed in services.html */
+.services-hero .hero-video {
+    display: none;
+}
+
+/* Specific styles for the Services page content */
+.service-offerings-section {
+    padding: 80px 0;
+    background: linear-gradient(180deg, #0a0a0a 0%, #1a0a2a 100%);
+    text-align: center;
+}
+
+.service-offerings-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 60px;
+    background: linear-gradient(45deg, #00f5ff, #ff00ff, #ffff00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+.service-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    justify-content: center;
+}
+
+.service-card {
+    background: rgba(10, 10, 30, 0.7);
+    border: 1px solid rgba(0, 245, 255, 0.2);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: left;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,0,255,0.1) 0%, transparent 70%);
+    transform: rotate(45deg);
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+    opacity: 0;
+}
+
+.service-card:hover::before {
+    transform: rotate(0deg);
+    opacity: 1;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    border-color: #ff00ff;
+    box-shadow: 0 15px 30px rgba(255, 0, 255, 0.4);
+}
+
+.service-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #ff00ff; /* Adjusted color for service card titles */
+    background: linear-gradient(45deg, #ff00ff, #00f5ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.service-card p {
+    font-size: 1.1rem;
+    color: #e0e0e0;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.service-card ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 15px;
+}
+
+.service-card ul li {
+    font-size: 1rem;
+    color: #ccc;
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.service-card ul li::before {
+    content: '•'; /* Bullet point */
+    color: #00f5ff; /* Color of the bullet */
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Responsive adjustments for services page */
+@media (max-width: 1024px) {
+    .service-card-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2.8rem;
+        margin-bottom: 40px;
+    }
+
+    .service-offerings-section {
+        padding: 60px 0;
+    }
+
+    .service-card {
+        padding: 25px;
+    }
+
+    .service-card h3 {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 2.2rem;
+        margin-bottom: 30px;
+    }
+
+    .service-card-grid {
+        grid-template-columns: 1fr; /* Single column on very small screens */
+    }
+
+    .service-card {
+        padding: 20px;
+    }
+
+    .service-card h3 {
+        font-size: 1.4rem;
+    }
+
+    .service-card p, .service-card ul li {
+        font-size: 0.95rem;
+    }
+}
