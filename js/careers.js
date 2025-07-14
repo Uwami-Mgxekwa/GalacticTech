@@ -25,6 +25,8 @@ function createStars() {
     }
 }
 
+
+
 // Navbar scroll effect
 function handleNavbarScroll() {
     const navbar = document.getElementById('navbar');
@@ -168,4 +170,5 @@ style.textContent = `
         }
     }
 `;
+
 document.head.appendChild(style);
