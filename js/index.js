@@ -43,19 +43,27 @@ function setupSmoothScrolling() {
     
     links.forEach(link => {
         link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const targetId = link.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetId);
+            const href = link.getAttribute('href');
             
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth'
-                });
-                // Close the hamburger menu after clicking a link
-                if (menuToggle && menuToggle.checked) {
-                    menuToggle.checked = false;
+            // Check if the link is an internal anchor link on the *current* page
+            // This condition ensures that only internal links trigger smooth scrolling and prevent default
+            if (href.startsWith('#')) {
+                e.preventDefault(); // Prevent default only for internal anchor links
+                const targetId = href.substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    // Close the hamburger menu after clicking a link
+                    if (menuToggle && menuToggle.checked) {
+                        menuToggle.checked = false;
+                    }
                 }
-            }
+            } 
+            // For external links (like to pages/careers.html), let default behavior happen
+            // No 'else' needed here, as default behavior is not prevented for non-hash links
         });
     });
 }
